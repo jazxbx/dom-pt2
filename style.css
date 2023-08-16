@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: 2em;
+}
+
+.box-toggle{
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.car-icon{
+    font-size: 100px;
+    margin-top: -50px;
+}
+
+#car{
+    position: relative;
+    margin-left: 0;
+    transition: margin-left 0.2s ease;
+}
+
+#timeDisplay {
+    font-size: 50px;
+    color: green;
+}
