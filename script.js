@@ -37,18 +37,32 @@ minus.addEventListener("click", () => {
 
 //RACE//
 
-// const car = document.querySelector("#car");
-// let step = 10;
+const car = document.querySelector("#car");
+let modifier = 0; // px value of movement of car
+
+document.addEventListener("keydown", (event) => {
+  //using destructuring in this way allows you to store the style element without having to continually reference it's parent object.
+  const { style } = car; // the same as writing const style = car.style;
+
+  if (event.key === "ArrowRight") {
+    modifier += 5;
+    style.marginLeft = modifier + "px"; // When you concatenate a value with a string in JavaScript, the value is automatically coerced into a string. This process is called type coercion.
+  } else if (event.key === "ArrowLeft") {
+    modifier -= 5;
+    style.marginLeft = `${modifier}px`;
+  }
+});
 
 // document.addEventListener("keydown", (event) => {
-//   // Left arrow
-//   if (event.key === "ArrowLeft") {
-//     car.style.marginLeft = parseInt(car.style.marginLeft) - step + "px";
+//   const { style } = car;
+//   if (event.key === "ArrowRight") {
+//     modifier += 5;
+//     style.marginLeft = `${parseInt(style.marginLeft) + modifier}px`;
+//   } else if (event.key === "ArrowLeft") {
+//     modifier -= 5;
+//     style.marginLeft = `${parseInt(style.marginLeft) - modifier}px`;
 //   }
-//   // Right arrow
-//   else if (event.key === "ArrowRight") {
-//     car.style.marginLeft = parseInt(car.style.marginLeft) + step + "px";
-//   }
+//   console.log("New margin-left:", style.marginLeft);
 // });
 
 // StOPWATCH
